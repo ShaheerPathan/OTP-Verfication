@@ -10,9 +10,17 @@ function verifyOTP() {
 
     if (otp.length === inputs.length) {
         alert('Verified.');
+        clearInputs(); 
+
     } else {
         alert('Please enter the complete OTP.');
     }
+}
+function clearInputs() {
+    inputs.forEach(input => {
+        input.value = ''; 
+    });
+    inputs[0].focus(); 
 }
 
 inputs.forEach((input, index) => {
@@ -35,3 +43,4 @@ inputs.forEach((input, index) => {
 verifyButton.addEventListener('click', () => {
     verifyOTP();
 });
+
